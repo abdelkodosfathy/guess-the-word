@@ -1,0 +1,108 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  width:fit-content;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.keyboard .row {
+  display: flex;
+  justify-content: center;
+}
+
+.key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  margin: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.key:active {
+  background-color: #ccc;
+}
+.key-used {
+  background-color: #ccc;
+  cursor:not-allowed;
+}
+
+.game-container .word-container {
+  width: 300px;
+}
+.game-container .word-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.game-container .word-container .empty{
+  display: block;
+  width: 30px;
+  height: 10px;
+  background-color: black;
+}
+.game-container .word-container .full{
+  display: block;
+  width: 30px;
+  color: black;
+  text-align: center;
+  font-size: 18px;
+}
+.score{
+  font-size: 18px;
+  margin: 30px;
+}
+.players{
+  width: 100%;
+  padding: 10px;
+}
+.form-container {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  width: 350px;
+  align-items: center;
+}
+form{
+  width:300px;
+}
+/* .form input{
+  height: 50px;
+  padding-left: 10px;
+  font-size: 18px;
+}
+.form button{
+  width: 70px;
+  height: 30px;
+  font-size: 20px;
+} */
+.form .input-field {
+}
+.not-useble{
+  cursor:not-allowed;
+}
+.dis-none{
+  display:none;
+}

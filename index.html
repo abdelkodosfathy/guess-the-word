@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>guess the word</title>
+</head>
+<body>
+  <!-- start of form page -->
+  <div class="form-container">
+    
+    <div class="form">
+      <div class="input-field">
+        <label for="name">name</label>
+        <input type="text" id="name" name="name">
+      </div>
+      
+      <div class="input-field">
+        <label for="room">room</label>
+        <input type="text" id="room" name="room">
+      </div>
+      
+      <!-- <div class="input-field">
+        <label for="write"> writer</label>
+        <input type="radio" id="write" name="type">
+        
+        <label for="guesser"> guesser</label>
+        <input type="radio" id="guesser" name="type">
+      </div> -->
+      
+      <div class="input-field">
+        <input type="submit" class="join">
+      </div>
+    </div>
+    
+  </div>
+  <!-- end of form page -->
+  
+  <div class="game-container dis-none">
+    <div class="players">
+      <p class="writer">writer : <span></span></p>
+      <p class="guesser"> guesser : <span></span></p>
+    </div>
+    <div class="enter-word">
+      <label for="word">word</label>
+      <input type="text" id="word" name="word">
+      <button class="done-btn">done</button>
+    </div>
+
+    <div class="score">
+      <p>score : <span></span></p>
+    </div>
+    <div class="word-container">
+    </div>
+    <div class="keyboard en ">
+      <div class="row">
+        <div class="key">Q</div>
+        <div class="key">W</div>
+        <div class="key">E</div>
+        <div class="key">R</div>
+        <div class="key">T</div>
+        <div class="key">Y</div>
+        <div class="key">U</div>
+        <div class="key">I</div>
+        <div class="key">O</div>
+        <div class="key">P</div>
+      </div>
+      <div class="row">
+        <div class="key">A</div>
+        <div class="key">S</div>
+        <div class="key">D</div>
+        <div class="key">F</div>
+        <div class="key">G</div>
+        <div class="key">H</div>
+        <div class="key">J</div>
+        <div class="key">K</div>
+        <div class="key">L</div>
+      </div>
+      <div class="row">
+        <div class="key">Z</div>
+        <div class="key">X</div>
+        <div class="key">C</div>
+        <div class="key">V</div>
+        <div class="key">B</div>
+        <div class="key">N</div>
+        <div class="key">M</div>
+      </div>
+    </div>
+    <div class="keyboard ar dis-none">
+      <div class="row">
+        <div class="key">ض</div>
+        <div class="key">ص</div>
+        <div class="key">ث</div>
+        <div class="key">ق</div>
+        <div class="key">ف</div>
+        <div class="key">غ</div>
+        <div class="key">ع</div>
+        <div class="key">ه</div>
+        <div class="key">خ</div>
+        <div class="key">ح</div>
+        <div class="key">ج</div>
+      </div>
+      <div class="row">
+        <div class="key">ش</div>
+        <div class="key">س</div>
+        <div class="key">ي</div>
+        <div class="key">ب</div>
+        <div class="key">ل</div>
+        <div class="key">ا</div>
+        <div class="key">ت</div>
+        <div class="key">ن</div>
+        <div class="key">م</div>
+        <div class="key">ك</div>
+        <div class="key">ط</div>
+      </div>
+      <div class="row">
+        <div class="key">ذ</div>
+        <div class="key">ئ</div>
+        <div class="key">ء</div>
+        <div class="key">ؤ</div>
+        <div class="key">ى</div>
+        <div class="key">ر</div>
+        <div class="key">ة</div>
+        <div class="key">و</div>
+        <div class="key">ز</div>
+        <div class="key">ظ</div>
+        <div class="key">د</div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCwlEpXCepFJNi8QmNfWt1DzM-pO2q4Vn4",
+      authDomain: "guess-game-d995b.firebaseapp.com",
+      databaseURL: "https://guess-game-d995b-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "guess-game-d995b",
+      storageBucket: "guess-game-d995b.appspot.com",
+      messagingSenderId: "701126081322",
+      appId: "1:701126081322:web:f01de1f077ae9717983c53",
+      measurementId: "G-FH1KBBJH2D"
+    };
+  
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

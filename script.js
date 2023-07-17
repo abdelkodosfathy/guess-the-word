@@ -113,27 +113,7 @@ let score = word.length;
 
 
 
-window.addEventListener("click", (el) => {
-  let element = el.target;
-  if(element.classList.contains("key")){
-    if(checkLetter(element.innerText,word)){
-      checkLetter(element.innerText,word);
-    } else if (!checkLetter(element.innerText,word) && !element.classList.contains("key-used")){
-      score--;
-      document.querySelector(".score span").innerText = score;
-    }
-  }
-  if(score == 0){
-    //lose statement
-  }
 
-  
-  // if(all of the letters have class full)
-  // win statement 
-  // stop click function
-
-  
-});
 
 //check givin letter in the word
 function checkLetter(letter,word,key) {
@@ -246,10 +226,38 @@ document.getElementById('room').addEventListener('input', () =>{
       let allplayersRef = firebase.database().ref(`players`);
       // that print the each elemnt's content
       allplayersRef.on("value", (snapshot) => {
-        const change = snapshot.val();
         playersChanges = snapshot.val() || {};
+        console.log("value");
+
+        //whenever guesser click on a key 
+        window.addEventListener("click", (el) => {
+          let element = el.target;
+          if(element.classList.contains("key") && playersChanges[playerId].guesser){
+            if(checkLetter(element.innerText,word)){
+              checkLetter(element.innerText,word);
+            } else if (!checkLetter(element.innerText,word) && !element.classList.contains("key-used")){
+              score--;
+              console.log("score mins");
+              document.querySelector(".score span").innerText = score;
+            }
+          }
+          if(score == 0){
+            //lose statement
+          }
+          
+          
+          // if(all of the letters have class full)
+          // win statement 
+          // stop click function
+          
+          
+        });
+        //end of whenever click on a key
         
         Object.keys(playersChanges).forEach((keyElement) => {
+          
+          
+          
           console.log("value: ", playersChanges[keyElement]);
           if(playersChanges[keyElement].writer && playersChanges[keyElement].id == playerId){
             console.log("main id : ",playersChanges[keyElement].id);
@@ -303,11 +311,12 @@ document.getElementById('room').addEventListener('input', () =>{
       // ================         =======================
       // ================================================
       function initGame(){
+      
         done.onclick = () => {
           word = wordInput.value;
           wordRef.set({
             wordT: word,
-          })
+          });
           setBlanks();
         }
       }
